@@ -124,6 +124,22 @@ Also, unfortunately branch protection cannot be enabled on your
 `master` branch. (Contributions welcome for anyone who can think of a
 workaround...)
 
+#### JIRA Integration
+
+Circlemator also offers rudimentary JIRA integration: when self-merging,
+circlemator can use
+[smart commits](https://confluence.atlassian.com/fisheye/using-smart-commits-298976812.html)
+to transition issues that are mentioned in commits in the pull request. To
+enable this, supply the following options:
+
+- `--jira-project PROJECT`: A project specifier to look for (e.g. `JRA`)
+- `--jira-transition TRANSITION`: A transition name for the commit message
+  (e.g. `ship`)
+
+For instance, if you provided a project name of `JRA` and a transition of `ship`
+and there is a commit with `JRA-123` in the pull request, the merge message will
+include `JRA-123 #ship`.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at

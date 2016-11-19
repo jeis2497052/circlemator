@@ -26,6 +26,14 @@ parser = OptionParser.new do |opts|
     options[:circle_api_token] = t
   end
 
+  opts.on('--jira-project PROJECT', 'JIRA project acronym') do |p|
+    options[:jira_project] = p
+  end
+
+  opts.on('--jira-transition TRANSITION', 'JIRA issue transition name') do |t|
+    options[:jira_transition] = t
+  end
+
   opts.on('-h', '--help', 'Print this help message') do
     puts opts
     exit
